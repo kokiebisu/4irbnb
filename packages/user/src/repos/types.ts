@@ -4,6 +4,7 @@ import { Email } from "../domains/fields";
 
 export interface IRepository extends IBaseRepository<Entity> {
   findByEmail(email: Email): Promise<Entity | null>;
+  findNextIdentifier(): Promise<string>;
 }
 
 export interface IRDSConfiguration {

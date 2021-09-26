@@ -1,6 +1,6 @@
 import { Identifier, InternalError } from "@4irbnb/common";
 import { Pool, PoolConfig } from "pg";
-import { Fields } from "../domains";
+import { Entity, Fields } from "../domains";
 import { Mapper } from "../mapper";
 import { IRepository } from "./types";
 import { RDSClient, DescribeDBInstancesCommand } from "@aws-sdk/client-rds";
@@ -132,7 +132,64 @@ export class Repository implements IRepository {
     }
   }
 
-  public async save() {}
+  public async save(entity: Entity) {
+    await this.openConnection();
+    try {
+      await this.#dbClient.query("BEGIN");
+      const raw = Mapper.convertToRaw(entity);
+      const query = {
+        name: "save-user",
+        text: `INSERT INTO "user" (email, first_name, last_name) VALUES ($1, $2, $3) RETURNING *`,
+        values: [raw.email, raw.first_name, raw.last_name],
+      };
+      const res = await this.#dbClient.query(query);
+      await this.#dbClient.query("COMMIT");
+      return res.rows[0];
+    } catch (err) {
+      await this.#dbClient.query("ROLLBACK");
+      throw err;
+    } finally {
+      await this.closeConnection();
+    }
+  }
 
-  public async delete() {}
+  public async delete(entity: Entity) {
+    await this.openConnection();
+    try {
+      await this.#dbClient.query("BEGIN");
+      const raw = Mapper.convertToRaw(entity);
+      const query = {
+        name: "delete-user",
+        text: `DELETE * FROM "user" WHERE id = $1 RETURNING *`,
+        values: [raw.id],
+      };
+      const res = await this.#dbClient.query(query);
+      await this.#dbClient.query("COMMIT");
+      console.log("RESULT DELETE", res);
+    } catch (err) {
+      await this.#dbClient.query("ROLLBACK");
+      throw err;
+    } finally {
+      await this.closeConnection();
+    }
+  }
+
+  public async findNextIdentifier() {
+    await this.openConnection();
+    try {
+      await this.#dbClient.query("BEGIN");
+      const query = {
+        name: "find-next-identifier",
+        text: `SELECT nextval(pg_get_serial_sequence('user', 'id')) as new_id;`,
+      };
+      const res = await this.#dbClient.query(query);
+      await this.#dbClient.query("COMMIT");
+      return res.rows[0].new_id;
+    } catch (err) {
+      await this.#dbClient.query("ROLLBACK");
+      throw err;
+    } finally {
+      await this.closeConnection();
+    }
+  }
 }
