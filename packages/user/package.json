@@ -11,6 +11,7 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
     "test": "jest --passWithNoTests",
+    "test:watch": "jest --passWithNoTests --detectOpenHandles --watch",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
     "deploy": "bash ../../scripts/deploy.sh user api consumer"
