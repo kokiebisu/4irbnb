@@ -1,5 +1,5 @@
 import { Identifier, InternalError } from "@4irbnb/common";
-import { Client, ClientConfig } from "pg";
+import { Pool, PoolConfig } from "pg";
 import { Fields } from "../domains";
 import { Mapper } from "../mapper";
 import { IRepository } from "./types";
@@ -8,9 +8,10 @@ import { DB_INSTANCE_IDENTIFIER } from "../config";
 import { ManagerService } from "@4irbnb/manager";
 
 export class Repository implements IRepository {
-  #pgClient: Client;
-  public constructor(dbConfig: ClientConfig) {
-    this.#pgClient = new Client(dbConfig);
+  #dbPool: Pool;
+  #dbClient: any;
+  public constructor(dbConfig: PoolConfig) {
+    this.#dbPool = new Pool(dbConfig);
   }
 
   public static async initialize() {
@@ -69,8 +70,6 @@ export class Repository implements IRepository {
         password,
       };
 
-      console.log("CONFIG", dbConfig);
-
       return new Repository(dbConfig);
     } catch (err) {
       console.error(err);
@@ -79,52 +78,57 @@ export class Repository implements IRepository {
   }
 
   public async openConnection() {
-    try {
-      if (this.#pgClient) {
-        await this.#pgClient.connect();
-      }
-    } catch (err: any) {
-      console.error("connection error", err.stack);
+    if (!this.#dbClient) {
+      this.#dbClient = await this.#dbPool.connect();
     }
   }
 
   public async closeConnection() {
-    try {
-      await this.#pgClient.end();
-    } catch (err: any) {
-      console.error("error during disconnection", err.stack);
+    if (!this.#dbClient) {
+      await this.#dbClient.release();
     }
   }
 
   public async findById(id: Identifier) {
-    const query = {
-      name: "fetch-user-by-id",
-      text: `SELECT * FROM "user" WHERE id = $1`,
-      values: [parseInt(id.toString())],
-    };
+    await this.openConnection();
     try {
-      const res = await this.#pgClient.query(query);
+      await this.#dbClient.query("BEGIN");
+      const query = {
+        name: "fetch-user-by-id",
+        text: `SELECT * FROM "user" WHERE id = $1`,
+        values: [parseInt(id.toString())],
+      };
+      const res = await this.#dbClient.query(query);
+      await this.#dbClient.query("COMMIT");
       const data = res.rows[0];
       return Mapper.convertToEntityFromRaw(data);
     } catch (err) {
-      console.error("CATCH", err);
-      return null;
+      console.log("ERROR", err);
+      await this.#dbClient.query("ROLLBACK");
+      throw err;
+    } finally {
+      await this.closeConnection();
     }
   }
 
   public async findByEmail(email: Fields.Email) {
-    const query = {
-      name: "fetch-user-by-email",
-      text: `SELECT * FROM "user" WHERE email = $1`,
-      values: [email.getValue()],
-    };
+    await this.openConnection();
     try {
-      const res = await this.#pgClient.query(query);
+      await this.#dbClient.query("BEGIN");
+      const query = {
+        name: "fetch-user-by-email",
+        text: `SELECT * FROM "user" WHERE email = $1`,
+        values: [email.getValue()],
+      };
+      const res = await this.#dbClient.query(query);
+      await this.#dbClient.query("COMMIT");
       const data = res.rows[0];
       return Mapper.convertToEntityFromRaw(data);
     } catch (err) {
-      console.error(err);
-      return null;
+      await this.#dbClient.query("ROLLBACK");
+      throw err;
+    } finally {
+      await this.closeConnection();
     }
   }
 
