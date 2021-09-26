@@ -7,6 +7,6 @@ export interface IBaseRepository<T> {
   openConnection(): Promise<void>;
   closeConnection(): Promise<void>;
   findById(id: Identifier): Promise<T | null>;
-  save(entity: T): Promise<void>;
-  delete(entity: T): Promise<void>;
+  save(entity: T): Promise<T>;
+  delete(entity: T): Promise<T>;
 }
