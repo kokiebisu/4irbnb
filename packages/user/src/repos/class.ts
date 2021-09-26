@@ -144,7 +144,8 @@ export class Repository implements IRepository {
       };
       const res = await this.#dbClient.query(query);
       await this.#dbClient.query("COMMIT");
-      return res.rows[0];
+      const data = res.rows[0];
+      return Mapper.convertToEntityFromRaw(data);
     } catch (err) {
       await this.#dbClient.query("ROLLBACK");
       throw err;
@@ -160,12 +161,13 @@ export class Repository implements IRepository {
       const raw = Mapper.convertToRaw(entity);
       const query = {
         name: "delete-user",
-        text: `DELETE * FROM "user" WHERE id = $1 RETURNING *`,
+        text: `DELETE FROM "user" WHERE id = $1 RETURNING *`,
         values: [raw.id],
       };
       const res = await this.#dbClient.query(query);
       await this.#dbClient.query("COMMIT");
-      console.log("RESULT DELETE", res);
+      const data = res.rows[0];
+      return Mapper.convertToEntityFromRaw(data);
     } catch (err) {
       await this.#dbClient.query("ROLLBACK");
       throw err;
