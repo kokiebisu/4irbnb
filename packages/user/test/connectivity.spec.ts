@@ -2,7 +2,7 @@ import { Identifier } from "@4irbnb/common";
 import { Email } from "../src/domains/fields";
 import { Repository } from "../src/repos";
 import { Factory } from "../src/factory";
-import { Fields } from "../src/domains";
+import { Entity, Fields } from "../src/domains";
 
 describe("Connectivity", () => {
   it("Finds by ID", async () => {
@@ -20,7 +20,7 @@ describe("Connectivity", () => {
     expect(result.fullName.getValue().firstName).toEqual("Kenichi");
     expect(result.fullName.getValue().lastName).toEqual("Okiebisu");
   });
-  it.only("Save", async () => {
+  it("Save", async () => {
     const repo = await Repository.initialize();
     const factory = new Factory(repo);
     const data = {
@@ -29,6 +29,17 @@ describe("Connectivity", () => {
     };
     const user = await factory.create(data);
     const result = await repo.save(user);
-    console.log("RESULT", result);
+    expect(result.email.getValue()).toEqual(data.email.getValue());
+    expect(result.fullName.getValue()).toEqual(data.fullName.getValue());
+  });
+  it.only("Delete", async () => {
+    const repo = await Repository.initialize();
+    const data = new Entity(new Identifier("13"), {
+      email: Fields.Email.create("random@gmail.com"),
+      fullName: Fields.FullName.create("Ben", "Parker"),
+    });
+    const result = await repo.delete(data);
+    expect(result.email.getValue()).toEqual(data.email.getValue());
+    expect(result.fullName.getValue()).toEqual(data.fullName.getValue());
   });
 });
