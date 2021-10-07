@@ -47,10 +47,22 @@
     "scripty": "^2.0.0",
     "typescript": "^4.3.4"
   },
-  "workspaces": [
-    "packages/*",
-    "app/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "app/*"
+    ],
+    "nohoist": [
+      "@react-native-community",
+      "@react-native-community/**",
+      "aws-amplify",
+      "react-native",
+      "react-native/**",
+      "react-native-dev-menu",
+      "react-native-svg",
+      "jetifier"
+    ]
+  },
   "private": true,
   "engines": {
     "node": ">= 14.17.1"
